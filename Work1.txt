@@ -1,4 +1,1 @@
 1.ABCD
-
-//Git revert command:
-git revert hashcode -> the hashcode you can get from git log --oneline or from GitHub directly
