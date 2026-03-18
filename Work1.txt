@@ -1,1 +1,72 @@
 1.ABCD
+
+
+/*
+🧠 Git Revert & Working Directory – Notes
+🔹 Does git revert delete working directory content?
+
+👉 YES — but only partially
+
+✔ It removes only the changes made by that specific commit
+❌ It does NOT delete the entire working directory
+
+🔹 What exactly happens?
+
+When you run:
+
+git revert <commit_id>
+
+👉 Git will:
+
+Reverse the changes of that commit
+
+Update the working directory
+
+Create a new commit
+
+🔹 Effect on Working Directory
+
+✔ Files added in that commit → Deleted
+✔ Files modified → Reverted to previous version
+✔ Files deleted → Restored back
+✔ Other files → No change
+
+🔹 Example
+
+Before revert:
+
+Commit C added → login.js
+
+After:
+
+git revert C
+
+👉 Result:
+
+login.js → ❌ removed from working directory
+
+New commit created
+
+🔹 Important Points ⚠️
+
+Only specific commit changes are undone
+
+Entire project is NOT affected
+
+Safe to use in shared/public repos
+
+History is preserved
+
+🔹 With -n option
+git revert -n <commit_id>
+
+👉 Changes:
+
+Applied to working directory
+
+❌ No commit created yet
+
+🔹 Final One-Line Answer
+
+👉 git revert updates the working directory by undoing that commit’s changes, not deleting everything
+*/
